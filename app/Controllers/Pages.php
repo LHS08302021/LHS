@@ -10,14 +10,15 @@ class Pages extends BaseController
 	}
 
 	public function view($page = NULL) {
+		helper('form');
 		if($page === NULL) {
 			echo view('registrar/home');
 		}
 
-    echo view('templates/header');
-    echo view('templates/sidebar');
-		echo view('templates/topbar');
+    echo view('registrar/templates/header');
+    echo view('registrar/templates/sidebar');
+		echo view('registrar/templates/topbar');
 		echo view('registrar/'.$page);
-    echo view('templates/footer');
+    echo view('registrar/templates/footer');
 	}
 }
