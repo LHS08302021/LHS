@@ -51,8 +51,8 @@
       <div class="py-2 sidebar-menu">
         <ul>
           <!-- dashboard nav link -->
-          <li class="sidebar-dropdown <?= ($page == 'home') ? 'active' : ''?>">
-            <a href="<?= site_url()?>registrar/home">
+          <li class="sidebar-dropdown <?= ($page == 'dashboard') ? 'active' : ''?>">
+            <a href="<?= site_url()?>registrar/dashboard">
               <i class="fa fa-tachometer-alt fa-fw"></i>
               <span class="ps-1">Dashboard</span>
             </a>
