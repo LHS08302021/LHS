@@ -1,8 +1,3 @@
-    <footer class="bg-light text-center col-sm-12 text-lg-start text-dark" >
-      <div class="text-center  p-3" >© 2020 Copyright:
-        <a class="text-primary" href="https://eslh.com/">eslh.com</a>
-      </div>
-    </footer>
   </div> 
   </div> 
   </body>

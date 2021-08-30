@@ -75,7 +75,8 @@
       </div>
   
       <!-- ChartBody -->
-      <div class="row m-0 mt-5">
+      <div class="row g-4 m-0 mt-5">
+
         <!--EnrolledStudentChart-->
         <div id="curve_chart" class="col-lg-7 col-md-12">
           <script>
@@ -103,6 +104,7 @@
             }
           </script>
         </div>
+
         <!--StrandChart-->
         <div id="donutchart" class="col-lg-5 col-md-12">
           <script>

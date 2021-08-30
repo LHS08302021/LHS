@@ -42,91 +42,118 @@
           </div>
         </div>
       </div>
+      
+      <?php 
+      $uri = service('uri');
+      $page = $uri->getSegment(2);
+      ?>
       <!-- sidebar-menu  -->
       <div class="py-2 sidebar-menu">
         <ul>
           <!-- dashboard nav link -->
-          <li class="sidebar-dropdown active">
-            <a href="#">
+          <li class="sidebar-dropdown <?= ($page == 'dashboard') ? 'active' : ''?>">
+            <a href="<?= site_url()?>registrar/dashboard">
               <i class="fa fa-tachometer-alt fa-fw"></i>
               <span class="ps-1">Dashboard</span>
             </a>
           </li>
 
+          <!-- course management nav link -->
+          <li class="sidebar-dropdown <?= ($page == 'crs_mgt') ? 'active' : ''?>">
+            <a href="#">
+              <i class="far fa-list-alt fa-fw"></i>
+              <span class="ps-1">Course Management</span>
+            </a>
+            <div class="sidebar-submenu <?= ($page == 'crs_tracks_strands' || $page == 'crs_schedule') ? 'd-block' : ''?>">
+              <ul>
+                <li>
+                  <a href="<?= site_url()?>registrar/crs_tracks_strands" class="<?= ($page == 'crs_tracks_strands') ? 'active' : ''?>">Tracks and Strands
+                  </a>
+                </li>
+                <li>
+                  <a href="<?= site_url()?>registrar/crs_schedule" class="<?= ($page == 'crs_schedule') ? 'active' : ''?>">Schedule</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
           <!-- enrollment nav link -->
-          <li class="sidebar-dropdown">
+          <li class="sidebar-dropdown <?= ($page == 'enroll_request' || $page == 'validation' || $page == 'payment') ? 'active' : ''?>">
             <a href="#">
               <i class="far fa-address-card fa-fw"></i>
               <span class="ps-1">Enrollment</span>
             </a>
-            <div class="sidebar-submenu">
+            <div class="sidebar-submenu <?= ($page == 'enroll_request' || $page == 'validation' || $page == 'payment') ? 'd-block' : ''?>">
               <ul>
                 <li>
-                  <a href="#">New Student
+                  <a href="<?= site_url()?>registrar/enroll_request" class="<?= ($page == 'enroll_request') ? 'active' : ''?>">Pending
                   </a>
                 </li>
                 <li>
-                  <a href="#">Old Student</a>
+                  <a href="<?= site_url()?>registrar/validation" class="<?= ($page == 'validation') ? 'active' : ''?>">Admission</a>
+                </li>
+                <li>
+                  <a href="<?= site_url()?>registrar/payment" class="<?= ($page == 'validation') ? 'active' : ''?>">Payment</a>
                 </li>
               </ul>
             </div>
           </li>
 
           <!-- ESC voucher -->
-          <li class="sidebar-dropdown">
+          <li class="sidebar-dropdown <?= ($page == 'esc_request' || $page == 'esc_approved' || $page == 'esc_denied') ? 'active' : ''?>">
             <a href="#">
               <i class="fas fa-tags fa-fw"></i>
               <span class="ps-1">ESC Voucher</span>
             </a>
-            <div class="sidebar-submenu">
+            <div class="sidebar-submenu <?= ($page == 'esc_request' || $page == 'esc_approved' || $page == 'esc_denied') ? 'd-block' : ''?>">
               <ul>
                 <li>
-                  <a href="#">Request</a>
+                  <a href="<?= site_url()?>registrar/esc_request">Verification</a>
                 </li>
                 <li>
-                  <a href="#">Accepted</a>
+                  <a href="<?= site_url()?>registrar/esc_approved">Approved</a>
                 </li>
                 <li>
-                  <a href="#">Denied</a>
+                  <a href="<?= site_url()?>registrar/esc_denied">Denied</a>
                 </li>
               </ul>
             </div>
           </li>
 
           <!-- Reports -->
-          <li class="sidebar-dropdown">
+          <li class="sidebar-dropdown <?= ($page == 'rep_masterlist' || $page == 'rep_escvoucher' || $page == 'rep_payment') ? 'active' : ''?>">
             <a href="#">
               <i class="fa fa-chart-line fa-fw"></i>
               <span class="ps-1">Reports</span>
             </a>
-            <div class="sidebar-submenu">
+            <div class="sidebar-submenu <?= ($page == 'rep_masterlist' || $page == 'rep_escvoucher' || $page == 'rep_payment') ? 'd-block' : ''?>">
               <ul>
                 <li>
-                  <a href="#">Masterlist</a>
+                  <a href="<?= site_url()?>registrar/rep_masterlist">Masterlist</a>
                 </li>
                 <li>
-                  <a href="#">ESC Voucher</a>
+                  <a href="<?= site_url()?>registrar/rep_escvoucher">ESC Voucher</a>
                 </li>
                 <li>
-                  <a href="#">Payment</a>
+                  <a href="<?= site_url()?>registrar/rep_payment">Payment</a>
                 </li>
               </ul>
             </div>
           </li>
 
           <!-- Account -->
-          <li class="sidebar-dropdown">
+          <li class="sidebar-dropdown <?= ($page == 'acc_request' || $page == 'acc_activated') ? 'active' : ''?>">
             <a href="#">
               <i class="fas fa-user-cog fa-fw"></i>
               <span class="ps-1">Account</span>
             </a>
-            <div class="sidebar-submenu">
+            <div class="sidebar-submenu <?= ($page == 'acc_request' || $page == 'acc_activated') ? 'd-block' : ''?>">
               <ul>
                 <li>
-                  <a href="#">Request</a>
+                  <a href="<?= site_url()?>registrar/acc_request">Request</a>
                 </li>
                 <li>
-                  <a href="#">Activated Account</a>
+                  <a href="<?= site_url()?>registrar/acc_activated">Activated Account</a>
                 </li>
               </ul>
             </div>

@@ -35,7 +35,8 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('r/(:segment)', 'Registrar::auth/$1');
 $routes->get('a/signin', 'Admin::index');
-$routes->get('registrar/(:any)', 'Pages::view/$1');
+$routes->get('registrar/(:any)', 'Registrar::view/$1');
+$routes->get('(:any)', 'Student::view/$1');
 
 /*
  * --------------------------------------------------------------------
